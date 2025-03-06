@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+venv/
+.env/
+
+# IDE's en Editors
+.vscode/
+.idea/
+*.swp
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Logs
+*.log
+
+# Env bestanden (gevoelige data)
+.env
+.env.*
+
+# Python egg files
+*.egg-info/
+*.egg
+
+# Pipenv
+Pipfile.lock
+
+# Mypy
+.mypy_cache/
+
+# Coverage rapporten
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# Test bestanden
+pytest_cache/
+.tox/
+
+# Build output
+build/
+dist/
+*.tar.gz
+*.whl
+
+# Swagger/OpenAPI generated
+openapi.json
+openapi.yaml
