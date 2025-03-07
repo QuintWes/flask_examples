@@ -14,13 +14,13 @@ def install_requirements():
     print("📦 Installing requirements...")
     # Windows
     if os.name == 'nt':
-        pip_path = os.path.join("venv", "Scripts", "pip.exe")
-    # MacOS/Linux
+        python_path = os.path.join("venv", "Scripts", "python.exe")
     else:
-        pip_path = os.path.join("venv", "bin", "pip")
+        python_path = os.path.join("venv", "bin", "python")
 
-    subprocess.check_call([pip_path, "install", "--upgrade", "pip"])
-    subprocess.check_call([pip_path, "install", "-r", "requirements.txt"])
+    subprocess.check_call([python_path, "-m", "pip", "install", "--upgrade", "pip"])
+    subprocess.check_call([python_path, "-m", "pip", "install", "-r", "requirements.txt"])
+    print("🔥 Requirements installed!")
 
 
 def main():
@@ -36,7 +36,7 @@ def main():
     if os.name == 'nt':
         print("   venv\\Scripts\\activate")
     else:
-        print("   source venv/bin/activate")
+        print("   source venv/bin/activate in bash")
 
     print("\n👉 Then run the app with:")
     print("   python app.py\n")
@@ -44,3 +44,15 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# source venv/Scripts/activate
+# python setup.py install
+# python app.py
+
+# python app.py
+# python flask_swagger_example.py
+# python flask_restx_example.py
+# python apifairy_example.py
+# python connexion_example.py
+
+# taskkill //IM python.exe //F

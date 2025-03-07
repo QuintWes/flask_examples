@@ -1,30 +1,37 @@
-from flask import Flask, render_template_string
+import multiprocessing
+import os
 
-app = Flask(__name__)
+def run_main_app():
+    os.system("python main_app.py")
 
-@app.route("/")
-def index():
-    return render_template_string("""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <title>API Package Examples</title>
-        <style>
-            body { font-family: Arial, sans-serif; padding: 50px; background-color: #f5f5f5; }
-            h1 { margin-bottom: 30px; }
-            a { display: block; padding: 15px; margin: 10px 0; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; width: 300px; text-align: center; }
-            a:hover { background-color: #0056b3; }
-        </style>
-    </head>
-    <body>
-        <h1>Flask API Examples</h1>
-        <a href="http://localhost:5001/api/pokemon/1">Flask-Swagger Example</a>
-        <a href="http://localhost:5002/api/pokemon/1">Flask-RESTX Example</a>
-        <a href="http://localhost:5003/api/pokemon/1">APIFairy Example</a>
-        <a href="http://localhost:5005/api/pokemon/1">Connexion Example</a>
-    </body>
-    </html>
-    """)
+
+def run_swagger_example():
+    os.system("python flask_swagger_example.py")
+
+
+def run_restx_example():
+    os.system("python flask_restx_example.py")
+
+
+# def run_apifairy_example():
+#     os.system("python apifairy_example.py")
+
+
+def run_connexion_example():
+    os.system("python connexion_example.py")
+
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    processes = [
+        multiprocessing.Process(target=run_main_app),
+        multiprocessing.Process(target=run_swagger_example),
+        multiprocessing.Process(target=run_restx_example),
+        # multiprocessing.Process(target=run_apifairy_example),
+        multiprocessing.Process(target=run_connexion_example),
+    ]
+
+    for process in processes:
+        process.start()
+
+    for process in processes:
+        process.join()
