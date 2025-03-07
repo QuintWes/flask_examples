@@ -1,18 +1,21 @@
-openapi: "3.0.0"
-info:
+openapi: "3.0.0"             # Versie van OpenAPI
+info:                        # Algemene info over de API
   title: "Pokemon API"
   version: "1.0.0"
-paths:
-  /api/pokemon/{id}:
-    get:
-      summary: "Get a Pokemon"
-      parameters:
+paths:                       # Hier worden alle endpoints beschreven
+  /api/pokemon/{id}:         # Het endpoint (met een path parameter {id})
+    get:                     # HTTP-methode (hier GET)
+      summary: "Get a Pokemon" # Korte omschrijving van de actie
+      parameters:              # Parameters van het request
         - name: id
-          in: path
+          in: path             # Geeft aan dat het in de URL zit
           required: true
           schema:
-            type: integer
-      responses:
+            type: integer       # id moet een getal zijn
+      responses:               # Mogelijke responses
         '200':
           description: "Successful response"
-      operationId: pokemon_api.get_pokemon
+      operationId: pokemon_api.get_pokemon  # Koppeling met Python-functie
+
+
+

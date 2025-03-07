@@ -6,3 +6,4 @@ apifairy==1.4.0
 marshmallow==3.21.1
 connexion[swagger-ui]==2.14.2
 PyYAML==6.0.1
+flasgger==0.9.5

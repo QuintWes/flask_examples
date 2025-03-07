@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Flask-Swagger Example</title>
+    <meta charset="UTF-8">
+    <title>Swagger Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+        a {
+            color: #1E88E5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Flask-Swagger Example!</h1>
-    <p>Example endpoint: <a href="/api/pokemon/1">/api/pokemon/1</a></p>
-    <p>Swagger spec: <a href="/spec">/spec</a></p>
+    <div class="container">
+        <h1>Welcome to the Swagger Example!</h1>
+        <p>🔗 Example endpoint:<br>
+            <a href="/api/pokemon/1">/api/pokemon/1</a>
+        </p>
+        <p>📄 Swagger spec JSON (flask-swagger):<br>
+            <a href="/spec">/spec</a>
+        </p>
+        <p>📝 Swagger UI (flasgger):<br>
+            <a href="/apidocs">/apidocs</a>
+        </p>
+    </div>
 </body>
 </html>
